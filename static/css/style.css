@@ -1450,7 +1450,7 @@ body.offcanvas-open {
   align-items: flex-end;
 }
 .hero-slide-image img {
-  max-width: 50%; /* Changing this Property */
+  max-width: 90%; /* Changing this Property */
   -webkit-animation-duration: 1s;
   animation-duration: 1s;
   -webkit-animation-fill-mode: both;
@@ -1461,18 +1461,18 @@ body.offcanvas-open {
 @media only screen and (min-width: 992px) and (max-width: 1199px),
   only screen and (min-width: 768px) and (max-width: 991px) {
   .hero-slide-image img {
-    width: 80%;
+    width: 70%;
   }
 }
 @media only screen and (max-width: 575px) {
   .hero-slide-image img {
-    width: 60%;
+    width: 50%;
     margin: auto;
   }
 }
 @media only screen and (max-width: 479px) {
   .hero-slide-image img {
-    width: 70%;
+    width: 60%;
     margin: auto;
   }
 }

@@ -46,7 +46,6 @@
         </div>
     </div>
     <!-- OffCanvas Wishlist End -->
-    
     <!-- OffCanvas Cart Start -->
     <div id="offcanvas-cart" class="offcanvas offcanvas-cart">
         <div class="inner">
@@ -104,10 +103,19 @@
 
             <div class="offcanvas-menu mb-4">
                 <ul>
+                    <li><a href="#"><span class="menu-text">category</span></a>
+                        <ul class="sub-menu">
+                            {% for category in links %}
+
+                            <li><a href="{{category.get_category_url}}"><span class="menu-text">{{category.category_name}}</span></a></li>
+
+                          {% endfor %}
+                        </ul>
+                    </li>
                     <li><a href="#"><span class="menu-text">Home</span></a>
                         <ul class="sub-menu">
-                            <li><a href="index.html"><span class="menu-text">Home 1</span></a></li>
-                            <li><a href="index-2.html"><span class="menu-text">Home 2</span></a></li>
+                            <li><a href="{% url 'home' %}"><span class="menu-text">Home</span></a></li>
+                            <li><a href="{% url 'store' %}"><span class="menu-text">Store</span></a></li>
                         </ul>
                     </li>
                     <li><a href="about.html">About</a></li>

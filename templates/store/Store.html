@@ -154,7 +154,7 @@
                       <!-- Single Prodect -->
                       <div class="product">
                         <div class="thumb">
-                          <a href="single-product.html" class="image">
+                          <a href="{{product.get_product_url}}" class="image">
                             <img src="{{product.images.url}}" alt="Product" />
                             <img
                               class="hover-image"
@@ -198,7 +198,7 @@
                             <span class="rating-num d-none">( 5 Review )</span>
                           </span>
                           <h5 class="title">
-                            <a href="single-product.html"
+                            <a href="{{product.get_product_url}}"
                               >{{product.product_name}}
                             </a>
                           </h5>
@@ -233,7 +233,7 @@
                   ></a>
                 </li>
                 <li class="li"><a class="page-link active" href="#">1</a></li>
-                <li class="li"><a class="page-link " href="#">2</a></li>
+                <li class="li"><a class="page-link" href="#">2</a></li>
                 <li class="li"><a class="page-link" href="#">3</a></li>
                 <li class="li">
                   <a class="page-link" href="#"
@@ -256,11 +256,21 @@
             <div class="sidebar-widget-category">
               <ul>
                 <li>
-                  <a href="#" class="selected m-0"
-                    ><i class="fa fa-angle-right"></i> All <span>({{product_count}})</span>
+                  <a href="{% url 'store' %}" class="selected m-0"
+                    ><i class="fa fa-angle-right"></i> All<span
+                      >({{product_count}})</span
+                    >
                   </a>
                 </li>
+                {% for category in links %}
                 <li>
+                  <a href="{{category.get_category_url}}" class=""
+                    ><i class="fa fa-angle-right"></i>
+                    {{category.category_name}} <span>({{product_count}})</span>
+                  </a>
+                </li>
+                {%endfor%}
+                <!-- <li>
                   <a href="#" class=""
                     ><i class="fa fa-angle-right"></i> Computer
                     <span>(12)</span>
@@ -295,7 +305,7 @@
                     ><i class="fa fa-angle-right"></i> Genuine Leather
                     <span>(9)</span>
                   </a>
-                </li>
+                </li> -->
               </ul>
             </div>
           </div>
@@ -306,7 +316,8 @@
               <ul>
                 <li>
                   <a href="#" class="selected m-0"
-                    ><i class="fa fa-angle-right"></i> All <span>({{product_count}})</span>
+                    ><i class="fa fa-angle-right"></i> All
+                    <span>({{product_count}})</span>
                   </a>
                 </li>
                 <li>
@@ -339,7 +350,8 @@
               <ul>
                 <li>
                   <a href="#" class="selected m-0"
-                    ><i class="fa fa-angle-right"></i> All <span>({{product_count}})</span>
+                    ><i class="fa fa-angle-right"></i> All
+                    <span>({{product_count}})</span>
                   </a>
                 </li>
                 <li>

@@ -228,7 +228,7 @@
                     <!-- Single Prodect -->
                     <div class="product">
                       <div class="thumb">
-                        <a href="single-product.html" class="image">
+                        <a href="{{product.get_product_url}}" class="image">
                           <img
                             src="{{product.images.url}}"
                             alt="Product"
@@ -274,7 +274,7 @@
                           <span class="rating-num">( 5 Review )</span>
                         </span>
                         <h5 class="title">
-                          <a href="single-product.html"
+                          <a href="{{product.get_product_url}}"
                             >{{product.product_name}}
                           </a>
                         </h5>
@@ -282,9 +282,9 @@
                           <span class="new">Rs. {{product.price}}</span>
                         </span>
                       </div>
-                      <button title="Add To Cart" class="add-to-cart">
+                      <a title="Add To Cart" class="add-to-cart" href="{% url 'add_cart' product.id %}">
                         Add To Cart
-                      </button>
+                      </a>
                     </div>
                   </div>
                   {% endfor %}

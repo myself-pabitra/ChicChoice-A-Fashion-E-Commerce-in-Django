@@ -8809,7 +8809,7 @@ Pages - My Account
 }
 
 /*===================================
-    - Breadvrumb  
+    - Breadcrumb  
 =================================*/
 .breadcrumb-area {
   background-image: url(../images/about-image/intro-bg.jpg);
@@ -8817,7 +8817,7 @@ Pages - My Account
   background-repeat: no-repeat;
   background-position: center center;
   border-bottom-width: 0px;
-  height: 400px;
+  height: 200px;          /* height: 400px; Changed from this to current  */
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;

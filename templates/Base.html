@@ -82,6 +82,8 @@
     {% comment %} Footer {% endcomment %}
         {% include 'includes/Footer.html' %}
 
+
+
     <!-- Search Modal Start -->
     <div class="modal popup-search-style" id="searchActive">
         <button type="button" class="close-btn" data-bs-dismiss="modal"><span aria-hidden="true">&times;</span></button>
@@ -90,9 +92,9 @@
                 <div class="modal-content">
                     <div class="modal-body">
                         <h2>Search Your Product</h2>
-                        <form class="navbar-form position-relative" role="search">
+                        <form class="navbar-form position-relative" role="search" action="{% url 'search' %}" method= "GET">
                             <div class="form-group">
-                                <input type="text" class="form-control" placeholder="Search here...">
+                                <input type="text" class="form-control" placeholder="Search here..." name="keyword">
                             </div>
                             <button type="submit" class="submit-btn"><i class="pe-7s-search"></i></button>
                         </form>

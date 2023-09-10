@@ -366,7 +366,9 @@
     ------------------------------ */
     var CartPlusMinus = $(".cart-plus-minus");
     CartPlusMinus.prepend('<div class="dec qtybutton">-</div>');
-    CartPlusMinus.append('<div class="inc qtybutton">+</div>');
+    CartPlusMinus.append(
+        '<a class="inc qtybutton" href="{% url "add_cart" cart_item.product.id %}">+</a>'
+    );
     $(".qtybutton").on("click", function () {
         var $button = $(this);
         var oldValue = $button.parent().find("input").val();
@@ -382,6 +384,31 @@
         }
         $button.parent().find("input").val(newVal);
     });
+
+    
+    // var CartPlusMinus = $(".cart-plus-minus");
+    // CartPlusMinus.prepend('<div class="dec qtybutton">-</div>');
+
+    // // Wrap the <div> in an anchor tag and set the href attribute
+    // CartPlusMinus.append(
+    //   '<a class="inc qtybutton" href="{% url "add_cart" cart_item.product.id %}">+</a>'
+    // );
+
+    // $(".qtybutton").on("click", function () {
+    //   var $button = $(this);
+    //   var oldValue = $button.parent().find("input").val();
+    //   if ($button.text() === "+") {
+    //     var newVal = parseFloat(oldValue) + 1;
+    //   } else {
+    //     // Don't allow decrementing below zero
+    //     if (oldValue > 1) {
+    //       var newVal = parseFloat(oldValue) - 1;
+    //     } else {
+    //       newVal = 1;
+    //     }
+    //   }
+    //   $button.parent().find("input").val(newVal);
+    // });
 
 
     /*------------------------------

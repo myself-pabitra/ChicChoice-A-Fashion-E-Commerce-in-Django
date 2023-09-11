@@ -3473,13 +3473,13 @@ body.offcanvas-open {
   height: 40px;
 }
 .pro-details-color-size .shop-select.show .nice-select {
-  max-width: 79px;
-  width: 79px;
+  max-width: 145px;
+  width: 140px;
   padding-right: 10px;
 }
 @media only screen and (max-width: 575px) {
   .pro-details-color-size .shop-select.show .nice-select {
-    width: 70px;
+    width: 140px;
   }
 }
 .pro-details-color-size .shop-select.show .nice-select:after {
@@ -8809,7 +8809,7 @@ Pages - My Account
 }
 
 /*===================================
-    - Breadvrumb  
+    - Breadcrumb  
 =================================*/
 .breadcrumb-area {
   background-image: url(../images/about-image/intro-bg.jpg);
@@ -9728,9 +9728,5 @@ Pages - My Account
     border-radius: 0;
   }
 }
-/* Add this CSS to your stylesheet */
-.header-logo a img {
-    max-width: 100%;
-    height: auto;
-    margin: 10px 0; /* Adjust the margin as needed for vertical positioning */
-}
+
+

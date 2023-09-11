@@ -3473,13 +3473,13 @@ body.offcanvas-open {
   height: 40px;
 }
 .pro-details-color-size .shop-select.show .nice-select {
-  max-width: 79px;
-  width: 79px;
+  max-width: 130px;
+  width: 120px;
   padding-right: 10px;
 }
 @media only screen and (max-width: 575px) {
   .pro-details-color-size .shop-select.show .nice-select {
-    width: 70px;
+    width: 135px;
   }
 }
 .pro-details-color-size .shop-select.show .nice-select:after {
@@ -3513,8 +3513,8 @@ body.offcanvas-open {
   -ms-user-select: none;
   user-select: none;
   white-space: nowrap;
-  max-width: 162px;
-  width: 162px;
+  max-width: 140px;
+  width: 125px;
   color: #090909;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -3525,7 +3525,7 @@ body.offcanvas-open {
 }
 @media only screen and (max-width: 575px) {
   .pro-details-color-size .shop-select .nice-select {
-    width: 130px;
+    width: 150px;
   }
 }
 .pro-details-color-size .shop-select .nice-select .current {

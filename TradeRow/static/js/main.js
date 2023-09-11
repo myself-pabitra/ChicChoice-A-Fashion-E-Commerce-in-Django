@@ -367,27 +367,6 @@
         Cart Plus Minus Button
     ------------------------------ */
 
-//   var CartPlusMinus = $(".cart-plus-minus");
-//   CartPlusMinus.prepend('<div class="dec qtybutton">-</div>');
-//   CartPlusMinus.append(
-//     `<a class="inc qtybutton" href="{% url "add_cart" cart_item.product.id %}" >+</a>`
-//   );
-
-//   $(".qtybutton").on("click", function () {
-//       var $button = $(this);
-//       var oldValue = $button.parent().find("input").val();
-//       if ($button.text() === "+") {
-//           var newVal = parseFloat(oldValue) + 1;
-//       } else {
-//           // Don't allow decrementing below zero
-//           if (oldValue > 1) {
-//               var newVal = parseFloat(oldValue) - 1;
-//           } else {
-//               newVal = 1;
-//           }
-//       }
-//       $button.parent().find("input").val(newVal);
-//   });
 
 
 
@@ -396,12 +375,8 @@ $(".cart-plus-minus").each(function () {
   var productId = $cartPlusMinus.data("product-id");
   var $input = $cartPlusMinus.find("input");
 
-
-
   $cartPlusMinus.prepend('<div class="dec qtybutton">-</div>');
-  $cartPlusMinus.append(
-    `<a class="inc qtybutton" href=''>+</a>`
-  );
+  $cartPlusMinus.append(`<a class="inc qtybutton" href=''>+</a>`);
 
   $cartPlusMinus.find(".qtybutton").on("click", function (event) {
     event.preventDefault();
@@ -411,18 +386,18 @@ $(".cart-plus-minus").each(function () {
 
     if ($button.text() === "+") {
       var newVal = oldValue + 1;
-          var address = window.location.href;
-          var final_address = address + "add_cart" + "/" + productId;
-          console.log(final_address);
-          window.location = final_address;
+      var address = window.location.href;
+      var final_address = address + "add_cart" + "/" + productId;
+      console.log(final_address);
+      window.location = final_address;
     } else {
       // Don't allow decrementing below zero
       if (oldValue > 1) {
         var newVal = oldValue - 1;
-            var address = window.location.href;
-            var final_address = address + "remove_cart" + "/" + productId;
-            console.log(final_address);
-            window.location = final_address;
+        var address = window.location.href;
+        var final_address = address + "remove_cart" + "/" + productId;
+        console.log(final_address);
+        window.location = final_address;
       } else {
         newVal = 1;
       }
@@ -438,6 +413,8 @@ $(".cart-plus-minus").each(function () {
     $input.val(newVal);
   });
 });
+
+
 
 
 

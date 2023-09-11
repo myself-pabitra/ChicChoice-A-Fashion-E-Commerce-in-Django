@@ -52,25 +52,23 @@
                                                     src="{{cart_item.product.images.url}}" alt="" /></a>
                                         </td>
                                         <td class="product-name"><a href="{{cart_item.product.get_product_url}}">{{cart_item.product.product_name}}</a>
-                                        <p class="opacity-50 m-1">Size: Medium</p>
-                                        <p class="opacity-50 ">Color: Olive Green</p>
+                                            {% if cart_item.variation.all %}
+                                            {% for item in cart_item.variation.all %}
+                                            
+                                                <p class="opacity-50 mb-0">{{item.variation_category | capfirst }} : {{item.variation_value | capfirst }}</p>
+
+                                            {% endfor %}
+                                            {% endif %}
+
                                         </td>
                                         <td class="product-price-cart"><span class="amount">Rs.{{cart_item.product.price}}</span></td>
 
-                                         {% comment %} <td class="product-quantity">
-                                            <div class="cart-plus-minus">
-                                                <input class="cart-plus-minus-box" type="text" name="qtybutton"
-                                                    value="{{cart_item.quantity}}" />
-                                            </div>
-                                        </td>  {% endcomment %}
 
                                         <td class="product-quantity">
                                             <div class="cart-plus-minus" data-product-id="{{ cart_item.product.id }}">
                                                 <input class="cart-plus-minus-box" type="text" name="qtybutton" value="{{ cart_item.quantity }}" />
                                             </div>
                                         </td>
-
-
 
 
 

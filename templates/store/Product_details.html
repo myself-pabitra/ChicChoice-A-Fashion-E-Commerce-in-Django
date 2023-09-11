@@ -85,6 +85,9 @@
                 </div>
                 <div class="col-lg-6 col-sm-12 col-xs-12" data-aos="fade-up" data-aos-delay="200">
                     <div class="product-details-content quickview-content ml-25px">
+                      
+                      <form action="{% url 'add_cart' single_product.id %}" method="POST">
+                        {% csrf_token %}
                         <h2>{{single_product.product_name}}</h2>
                         <div class="pricing-meta">
                             <ul class="d-flex">
@@ -117,13 +120,12 @@
                                     <p>Color:</p>
                                 </div>
                                 <div class="shop-select">
-                                    <select class="shop-sort">
-                                        <option data-display="Balck">Balck</option>
-                                        <option value="1"> Gold</option>
-                                        <option value="2"> Golden</option>
-                                        <option value="3"> White</option>
+                                    <select class="shop-sort" name="color" required>
+                                        <option value="" disabled selected>Select </option>
+                                        {% for i in single_product.variation_set.colors%}
+                                        <option value="{{i.variation_value | lower}}"> {{i.variation_value |capfirst}}</option>
+                                        {%endfor%}
                                     </select>
-    
                                 </div>
                             </div>
                             <!-- Right Side End -->
@@ -133,43 +135,28 @@
                                     <p>Size:</p>
                                 </div>
                                 <div class="shop-select show">
-                                    <select class="shop-sort">
-                                        <option data-display="XL">XL</option>
-                                        <option value="1"> M</option>
-                                        <option value="2"> L</option>
-                                        <option value="3"> S</option>
+                                    <select class="shop-sort" name="size" required>
+                                        <option value="" disabled selected>Select</option>
+                                        {% for i in single_product.variation_set.sizes%}
+                                        <option value="{{i.variation_value | lower}}"> {{i.variation_value | capfirst}}</option>
+                                        {%endfor%}
                                     </select>
     
                                 </div>
                             </div>
                             <!-- Right Side End -->
-
-
-
                           </div>
 
                               {% if single_product.Stock <= 0 %}
                               <h5 class="text-danger m-3">Out of Stock</h5>
-                              {%else%} 
-                            {% if in_cart %}
-                            <div class="pro-details-quality">
-
-                                <div class="pro-details-cart">
-                                    <button class="add-cart"> Added to Cart</button>
-                                </div>
-                                <div class="pro-details-cart">
-                                    <a href="{% url 'cart' %}" class="add-cart buy-button"> View Cart</a>
-                                </div>
-
-                            </div>
-                            {%else%}
+                              {%else%}
                               <div class="pro-details-quality">
                                 <div class="cart-plus-minus">
                                     <input class="cart-plus-minus-box" type="text" name="qtybutton" value="1" />
                                 </div>
                                 <div class="pro-details-cart">
-                                    <a href="{% url 'add_cart' single_product.id %}" class="add-cart"> Add To
-                                        Cart</a>
+                                    <button type="submit" class="add-cart"> Add To
+                                        Cart</button>
                                 </div>
                                 <div class="pro-details-cart">
                                     <button class="add-cart buy-button"> Buy It Now</button>
@@ -178,9 +165,8 @@
                                     <a href="wishlist.html"><i class="pe-7s-like"></i></a>
                                 </div>
                             </div>
-                        {% endif %}
                     {% endif %}
-
+                        </form>
 
                         <div class="pro-details-categories-info pro-details-same-style d-flex">
                             <span>Categories: </span>

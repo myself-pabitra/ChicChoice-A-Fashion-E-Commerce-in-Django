@@ -95,7 +95,7 @@
               >{{cart_item.quantity}} x
               <span class="amount">Rs. {{cart_item.product.price}}</span></span
             >
-            <a href="{% url 'remove_cart_item' cart_item.product.id %}" class="remove">×</a>
+            <a href="{% url 'remove_cart_item' cart_item.product.id  cart_item.id  %}"" class="remove"> x </a>
           </div>
         </li>
 

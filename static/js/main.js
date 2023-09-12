@@ -369,50 +369,6 @@
 
 
 
-$(".cart-plus-minus").each(function () {
-  var $cartPlusMinus = $(this);
-  var productId = $cartPlusMinus.data("product-id");
-  var $input = $cartPlusMinus.find("input");
-
-  $cartPlusMinus.prepend('<div class="dec qtybutton">-</div>');
-  $cartPlusMinus.append(`<a class="inc qtybutton" href=''>+</a>`);
-
-  $cartPlusMinus.find(".qtybutton").on("click", function (event) {
-    event.preventDefault();
-
-    var $button = $(this);
-    var oldValue = parseFloat($input.val());
-
-    if ($button.text() === "+") {
-      var newVal = oldValue + 1;
-      var address = window.location.href;
-      var final_address = address + "add_cart" + "/" + productId;
-      console.log(final_address);
-      window.location = final_address;
-    } else {
-      // Don't allow decrementing below zero
-      if (oldValue > 1) {
-        var newVal = oldValue - 1;
-        var address = window.location.href;
-        var final_address = address + "remove_cart" + "/" + productId;
-        console.log(final_address);
-        window.location = final_address;
-      } else {
-        newVal = 1;
-      }
-    }
-
-    // Generate the dynamic Django URL with the product ID
-    var url = "{% url 'add_cart' 0 %}".replace("0", productId);
-
-    // Update the href attribute of the anchor tag
-    $cartPlusMinus.find(".inc.qtybutton").attr("href", url);
-
-    // Update the input value
-    $input.val(newVal);
-  });
-});
-
 
 
 

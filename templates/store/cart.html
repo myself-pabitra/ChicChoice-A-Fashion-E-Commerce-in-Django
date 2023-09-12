@@ -31,7 +31,6 @@
             <h3 class="cart-page-title">Your cart items</h3>
             <div class="row">
                 <div class="col-lg-12 col-md-12 col-sm-12 col-12">
-                    <form action="#">
                         <div class="table-content table-responsive cart-table-content">
                             <table>
                                 <thead>
@@ -63,19 +62,32 @@
                                         </td>
                                         <td class="product-price-cart"><span class="amount">Rs.{{cart_item.product.price}}</span></td>
 
+                                        <!-- Product Quantity Section Start -->
+
 
                                         <td class="product-quantity">
-                                            <div class="cart-plus-minus" data-product-id="{{ cart_item.product.id }}">
-                                                <input class="cart-plus-minus-box" type="text" name="qtybutton" value="{{ cart_item.quantity }}" />
+                                            <div class="cart-plus-minus" >
+                                                <a href="{% url 'remove_cart' cart_item.product.id cart_item.id %}" class="dec qtybutton" id="minusBtn">-</a>
+
+                                                <input class="cart-plus-minus-box" type="text" id="quantityValue" value="{{ cart_item.quantity }}" readonly/>
+
+                                                <form action="{% url 'add_cart' cart_item.product.id %}" method="POST">
+                                                    {% csrf_token %}
+                                                    {% for item in cart_item.variation.all %}
+                                                        <input type="hidden" name="{{item.variation_category | lower }}" value="{{item.variation_value | capfirst}}">
+                                                    {% endfor %}
+                                                    <button type="submit"  class="inc qtybutton" id="plusBtn">+</button>
+                                                </form>
                                             </div>
                                         </td>
 
+                                        {% comment %} <!-- Product Quantity Section end --> {% endcomment %}
 
 
                                         <td class="product-subtotal">Rs. {{cart_item.sub_total}}</td>
                                         <td class="product-remove">
                                             <a href="#"><i class="fa fa-pencil"></i></a>
-                                            <a href="{% url 'remove_cart_item' cart_item.product.id %}"><i class="fa fa-times"></i></a>
+                                            <a href="{% url 'remove_cart_item' cart_item.product.id  cart_item.id  %}"><i class="fa fa-times"></i></a>
                                         </td>
                                     </tr>
                                     {% endfor %}
@@ -95,7 +107,6 @@
                                 </div>
                             </div>
                         </div>
-                    </form>
                     <div class="row">
                         <!-- <div class="col-lg-4 col-md-6 mb-lm-30px">
                             <div class="cart-tax">

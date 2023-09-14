@@ -4920,9 +4920,10 @@ Pages - My Account
 .login-register-wrapper .login-form-container .login-register-form input {
   background-color: transparent;
   border: 1px solid #ebebeb;
+  border-radius: 5px;
   color: #474747;
   font-size: 14px;
-  margin-bottom: 30px;
+  margin-bottom: 10px;
   padding: 0 15px;
   width: 100%;
   outline: none;
@@ -4983,6 +4984,9 @@ Pages - My Account
   .button-box
   button {
   background-color: #f2f2f2;
+  width: 50%;
+  margin-top: 20px;
+  margin-left: 9em;
   border: medium none;
   color: #000000;
   cursor: pointer;
@@ -4994,7 +4998,7 @@ Pages - My Account
   -webkit-transition: all 0.3s ease 0s;
   transition: all 0.3s ease 0s;
   outline: none;
-  border-radius: 0px;
+  border-radius: 5px;
   font-family: "Rubik", sans-serif;
 }
 .login-register-wrapper
@@ -5009,10 +5013,24 @@ Pages - My Account
   .login-register-wrapper .login-form-container {
     padding: 80px 50px;
   }
+  .login-register-wrapper
+    .login-form-container
+    .login-register-form
+    .button-box
+    button {
+    margin-left: 5em;
+  }
 }
 @media only screen and (max-width: 767px) {
   .login-register-wrapper .login-form-container {
     padding: 40px 15px;
+  }
+  .login-register-wrapper
+    .login-form-container
+    .login-register-form
+    .button-box
+    button {
+    margin-left: 5em;
   }
 }
 
@@ -8817,7 +8835,7 @@ Pages - My Account
   background-repeat: no-repeat;
   background-position: center center;
   border-bottom-width: 0px;
-  height: 200px;          /* height: 400px; Changed from this to current  */
+  height: 200px; /* height: 400px; Changed from this to current  */
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -9728,5 +9746,3 @@ Pages - My Account
     border-radius: 0;
   }
 }
-
-

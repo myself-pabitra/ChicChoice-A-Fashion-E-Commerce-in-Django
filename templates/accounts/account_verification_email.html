@@ -1,0 +1,23 @@
+{% autoescape off %}
+
+
+
+Hi {{user.first_name}},
+Welcome to ChicChoice Fashion!
+
+Thank you for choosing ChicChoice Fashion for your fashion needs. To activate your account and start shopping with us, please click the button below:
+http://{{domain}}{% url 'activate' uidb64=uid token=token %}
+
+We can't wait to see you on our platform. Happy shopping!
+
+If you think it's not you, please ignore this email.
+If you have any questions or need assistance, please contact our support team at support@chicchoicefashion.com.
+
+
+Thnak You, 
+Team ChicChoice
+
+{% endautoescape %}
+
+
+

@@ -263,15 +263,24 @@
                 <i class="pe-7s-users"></i>
               </button>
               <ul class="dropdown-menu dropdown-menu-right">
+                {% if user.is_authenticated %}
                 <li>
-                  <a class="dropdown-item" href="my-account.html">My account</a>
+                  <a class="dropdown-item" href="{% url "dashboard" %}">My account</a>
                 </li>
                 <li>
                   <a class="dropdown-item" href="checkout.html">Checkout</a>
                 </li>
                 <li>
-                  <a class="dropdown-item" href="login.html">Sign in</a>
+                  <a class="dropdown-item" href="{% url 'logout' %}">Sign out</a>
                 </li>
+                {% else %}
+                  <li>
+                  <a class="dropdown-item" href="{% url 'register' %}">Register</a>
+                </li>
+                <li>
+                  <a class="dropdown-item" href="{% url 'login' %}">Sign in</a>
+                </li>
+                {% endif %}
               </ul>
             </div>
             <!-- Single Wedge Start -->

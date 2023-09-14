@@ -11,7 +11,7 @@ https://docs.djangoproject.com/en/4.2/ref/settings/
 """
 
 from pathlib import Path
-
+from django.contrib.messages import constants as messages
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -75,8 +75,8 @@ TEMPLATES = [
 ]
 
 WSGI_APPLICATION = 'TradeRow.wsgi.application'
-AUTH_USER_MODEL = 'accounts.Account'
 
+AUTH_USER_MODEL = 'accounts.Account'
 
 # Database
 # https://docs.djangoproject.com/en/4.2/ref/settings/#databases
@@ -117,6 +117,8 @@ TIME_ZONE = 'UTC'
 
 USE_I18N = True
 
+USE_L10N = True
+
 USE_TZ = True
 
 
@@ -143,3 +145,17 @@ STATICFILES_DIRS = [
 
 MEDIA_URL = '/media/'
 MEDIA_ROOT = BASE_DIR/ 'media'
+
+
+MESSAGE_TAGS = {
+    messages.ERROR: "danger",
+
+}
+
+#SMTP configuration
+
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_PORT = 587
+EMAIL_HOST_USER = 'mailsample81@gmail.com'
+EMAIL_HOST_PASSWORD = 'whtxcfkuczcceuds'
+EMAIL_USE_TLS = True

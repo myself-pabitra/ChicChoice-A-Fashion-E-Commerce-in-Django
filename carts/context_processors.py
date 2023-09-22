@@ -8,7 +8,10 @@ def cart_counter(request):
     else:
         try:
             cart = Cart.objects.filter(cart_id = _cart_id(request))
-            cart_items = CartItem.objects.all().filter(cart = cart[:1])
+            if request.user.is_authenticated:
+                cart_items = CartItem.objects.all().filter(user = request.user)
+            else:
+                cart_items = CartItem.objects.all().filter(cart = cart[:1])
             for cart_item in cart_items:
                 cart_count += cart_item.quantity
 
@@ -20,8 +23,11 @@ def cart_counter(request):
 
 def nav_cart_items(request):
     try:
-        cart = Cart.objects.get(cart_id=_cart_id(request))
-        cart_items = CartItem.objects.filter(cart=cart, is_active=True)
+        cart = Cart.objects.filter(cart_id=_cart_id(request))
+        if request.user.is_authenticated:
+            cart_items = CartItem.objects.filter(user = request.user)
+        else:
+            cart_items = CartItem.objects.filter(cart = cart[:1], is_active=True)
     except Cart.DoesNotExist:
         cart_items = []
     return dict(cart_items = cart_items)

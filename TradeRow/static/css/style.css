@@ -4369,7 +4369,7 @@ body.offcanvas-open {
 .your-order-area .Place-order {
   margin-top: 25px;
 }
-.your-order-area .Place-order a {
+/* .your-order-area .Place-order a {
   background-color: #eaaa85;
   color: #fff;
   display: block;
@@ -4384,7 +4384,7 @@ body.offcanvas-open {
 }
 .your-order-area .Place-order a:hover {
   background-color: #000000;
-}
+} */
 
 .open-toggle,
 .open-toggle2 {
@@ -8830,12 +8830,13 @@ Pages - My Account
     - Breadcrumb  
 =================================*/
 .breadcrumb-area {
-  background-image: url(../images/about-image/intro-bg.jpg);
+  background-image: url(../images/about-image/poster3.jpg);
+  /* background-image: url(../images/about-image/intro-bg.jpg); */
   background-color: #fcf6f6;
   background-repeat: no-repeat;
   background-position: center center;
   border-bottom-width: 0px;
-  height: 200px; /* height: 400px; Changed from this to current  */
+  height: 150px; /* height: 400px; Changed from this to current  */
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -8865,11 +8866,11 @@ Pages - My Account
   }
 }
 .breadcrumb-area .breadcrumb-title {
-  font-weight: 400;
-  text-transform: capitalize;
-  font-size: 60px;
-  color: #4a4a4a;
-  margin: 0;
+font-weight: 400;
+    text-transform: capitalize;
+    font-size: 51px;
+    color: #696ee3;
+    margin: 0;
 }
 @media only screen and (max-width: 767px) {
   .breadcrumb-area .breadcrumb-title {
@@ -8879,19 +8880,19 @@ Pages - My Account
 
 .breadcrumb-list li {
   display: inline-block;
-  font-size: 18px;
+  font-size: 15px;
   font-weight: 500;
   text-transform: capitalize;
   margin-top: 14px;
 }
 .breadcrumb-list li a {
-  color: #4a4a4a;
+  color: whitesmoke;
 }
 .breadcrumb-list li a:hover {
-  color: #eaaa85;
+  color: green;
 }
 .breadcrumb-list li.active {
-  color: #eaaa85;
+  color: #1776d0;
 }
 
 .breadcrumb-item + .breadcrumb-item {
@@ -8900,7 +8901,7 @@ Pages - My Account
 .breadcrumb-item + .breadcrumb-item::before {
   display: inline-block;
   padding-right: 10px;
-  color: #eaaa85;
+  color: #14a000;
   content: "//";
 }
 

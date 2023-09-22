@@ -80,7 +80,7 @@
 
       <ul class="minicart-product-list">
         {% for cart_item in cart_items %}
-
+ 
         <li>
           <a href="{{cart_item.product.get_product_url}}" class="image"
             ><img
@@ -91,11 +91,10 @@
             <a href="{{cart_item.product.get_product_url}}" class="title"
               >{{cart_item.product.product_name}}</a
             >
-            <span class="quantity-price"
-              >{{cart_item.quantity}} x
-              <span class="amount">Rs. {{cart_item.product.price}}</span></span
-            >
-            <a href="{% url 'remove_cart_item' cart_item.product.id  cart_item.id  %}"" class="remove"> x </a>
+            <span class="quantity-price">{{cart_item.quantity}} x
+              <span class="amount">Rs. {{cart_item.product.price}}</span>
+            </span>
+            <a href="{% url 'remove_cart_item' cart_item.product.id  cart_item.id  %}" class="remove"> x </a>
           </div>
         </li>
 
@@ -118,7 +117,7 @@
           class="btn btn-dark btn-hover-primary mb-30px"
           >view cart</a
         >
-        <a href="checkout.html" class="btn btn-outline-dark current-btn"
+        <a href="{% url 'checkout' %}" class="btn btn-outline-dark current-btn"
           >checkout</a
         >
       </div>

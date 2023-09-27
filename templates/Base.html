@@ -1,5 +1,5 @@
 {% load static %}
-<!DOCTYPE html>
+{% comment %} <!DOCTYPE html> {% endcomment %}
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -65,6 +65,11 @@
     <!-- Main Style -->
     <link rel="stylesheet" href="{% static 'css/style.css' %}" />
     <link rel="stylesheet" href="{% static 'css/my.css' %}" />
+    
+      <!-- Razorpay Script -->
+    <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
+
+
   </head>
 
   <body>
@@ -274,6 +279,8 @@
 
     <!-- Main Js -->
     <script src="{% static 'js/main.js' %}"></script>
+
+
 </body>
 
 </html>

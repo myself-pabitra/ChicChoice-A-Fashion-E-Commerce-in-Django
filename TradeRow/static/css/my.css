@@ -39,3 +39,55 @@
 .your-order-area .Place-order a:hover {
   background-color: #eaaa85;
 }
+
+.billing-info-wrap .additional-info-wrap {
+  margin: 0px 0;
+}
+
+
+.img-responsive {
+  max-width: 50%;
+  display: block;
+  width: 100%;
+}
+
+
+.ml-40px {
+  margin-left: 38px;
+}
+
+#Payment {
+  border: none;
+}
+
+.grand-totall .place_order_button {
+    background-color: #eaaa85;
+    border-radius: 0px;
+    color: #fff;
+    display: block;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 1;
+    padding: 18px 10px 17px;
+    text-align: center;
+    text-transform: uppercase;
+    text-transform: uppercase;
+    -webkit-transition: all 0.3s ease 0s;
+    transition: all 0.3s ease 0s;
+    width: 100%;
+}
+
+#order_success_btn {
+  color: green;
+  height: 70px;
+  width: 70px;
+  margin-bottom: 20px;
+}
+
+#shopmore_button{
+  background: #1cb71c;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  padding: 6px;
+}

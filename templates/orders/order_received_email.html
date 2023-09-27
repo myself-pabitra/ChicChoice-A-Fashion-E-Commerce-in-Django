@@ -1,0 +1,42 @@
+{% autoescape off %}
+
+
+Hi {{user.first_name}},
+
+Your chicChoice order has been placed Successfully!
+
+Your order id is {{order.order_number}}
+
+Thank you for shopping with us! We hope to deliver this order within 5 days. Once packed and shipped, we shall update you on the promised date of delivery.
+
+Meanwhile, stay bold, stay stylish!
+
+Your Ordered Items:
+Product Name  ||  Product Price  || Product Quantity
+
+{% for product in orderproducts %}
+{{product.product}}  ||  {{product.product_price}}  || {{product.quantity}} || 
+
+    {% if product.variations.all %}
+    {% for it in product.variations.all %}
+        {{it.variation_category | capfirst }} : {{it.variation_value | capfirst }}
+    {% endfor %}
+    {% endif %}
+
+{% endfor %}
+
+
+
+
+
+
+If you have any questions or need assistance, please contact our support team at support@chicchoicefashion.com.
+
+
+Thnak You, 
+Team ChicChoice
+
+{% endautoescape %}
+
+
+
